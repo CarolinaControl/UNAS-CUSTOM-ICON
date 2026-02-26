@@ -98,5 +98,5 @@ You can change the `model=` string to match your preferred hardware aesthetic:
 * **Finder Refresh:** If the icon doesn't update immediately, force-quit Finder (`Option` + Right Click Finder icon -> **Relaunch**) or clear the macOS Icon Cache.
 
 Disclaimer
-This is a community project and is not affiliated with Unifi. Use at your own risk.
+This project is not affiliated with Unifi. Use at your own risk.
 ---
