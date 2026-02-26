@@ -78,6 +78,8 @@ macOS often prioritizes **mDNS (Bonjour)** for Finder icons. Adding a `device-in
     ```
 ---
 
+** Restart SAMBA in settings/services on  Unifi web interface **
+
 ## 🎨 Icon Reference Table
 You can change the `model=` string to match your preferred hardware aesthetic:
 
