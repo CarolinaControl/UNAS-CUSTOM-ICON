@@ -96,5 +96,3 @@ You can change the `model=` string to match your preferred hardware aesthetic:
 * **Finder Refresh:** If the icon doesn't update immediately, force-quit Finder (`Option` + Right Click Finder icon -> **Relaunch**) or clear the macOS Icon Cache.
 
 ---
-
-*Generated for UniFi UNAS Enthusiasts* 🚀
