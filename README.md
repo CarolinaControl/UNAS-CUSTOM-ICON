@@ -61,4 +61,35 @@ macOS often prioritizes **mDNS (Bonjour)** for Finder icons. Adding a `device-in
         <port>445</port>
       </service>
       <service>
-        <type>_
+        <type>_device-info._tcp</type>
+        <port>0</port>
+        <txt-record>model=RackMac</txt-record>
+      </service>
+    </service-group>
+    ```
+3.  **Restart the Avahi daemon:**
+    ```bash
+    systemctl restart avahi-daemon
+    ```
+---
+
+## 🎨 Icon Reference Table
+You can change the `model=` string to match your preferred hardware aesthetic:
+
+| String | Finder Icon Description |
+| :--- | :--- |
+| **`RackMac`** | **Xserve / Silver Rack Server (Classic)** |
+| `MacPro7,1` | 2019 "Cheese Grater" Tower |
+| `Macmini` | Silver Unibody Mac Mini |
+| `Xserve` | Original Apple Xserve Blade |
+| `iMac` | Modern Slim-profile Desktop |
+
+---
+
+## ⚠️ Important Notes
+* **Persistence:** UniFi firmware updates frequently overwrite `/etc/samba/smb.conf`. It is recommended to keep a backup of these changes.
+* **Finder Refresh:** If the icon doesn't update immediately, force-quit Finder (`Option` + Right Click Finder icon -> **Relaunch**) or clear the macOS Icon Cache.
+
+---
+
+*Generated for UniFi UNAS Enthusiasts* 🚀
