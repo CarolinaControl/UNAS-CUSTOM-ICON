@@ -23,20 +23,23 @@ The `fruit` module is an Apple-specific extension for Samba that allows macOS to
     ```
 2.  **Open the Samba configuration file:**
     ```bash
-    nano /etc/samba/smb.conf
+    sudo vi /etc/samba/smb.conf
     ```
 3.  **Update the `[global]` section:**
     Ensure the following parameters are present to signal the hardware type to macOS:
+    Some of these settings exist already towards the bottom of global
     ```ini
     [global]
-    vfs objects = fruit streams_xattr
-    fruit:metadata = stream
-    fruit:model = RackMac
+    vfs objects = fruit full_audit streams_xattr
+    fruit:aapl = yes
+    fruit:nfs_aces = no
+    fruit:model = rackmount
+    fruit:wipe_intentionally_left_blank_rfork = yes
     fruit:posix_rename = yes
     fruit:veto_appledouble = no
-    fruit:nfs_aces = no
+
     ```
-4.  **Restart the Samba service:**
+5.  **Restart the Samba service:**
     ```bash
     systemctl restart smbd
     ```
@@ -48,7 +51,7 @@ macOS often prioritizes **mDNS (Bonjour)** for Finder icons. Adding a `device-in
 
 1.  **Edit the SMB service file:**
     ```bash
-    nano /etc/avahi/services/samba.service
+    sudo vi /etc/avahi/services/samba.service
     ```
 2.  **Insert the `<txt-record>` for the model:**
     ```xml
@@ -67,7 +70,9 @@ macOS often prioritizes **mDNS (Bonjour)** for Finder icons. Adding a `device-in
       </service>
     </service-group>
     ```
-3.  **Restart the Avahi daemon:**
+    leave the folders before the last   </service-group> alone
+    
+4.  **Restart the Avahi daemon:**
     ```bash
     systemctl restart avahi-daemon
     ```
