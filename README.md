@@ -70,7 +70,7 @@ macOS often prioritizes **mDNS (Bonjour)** for Finder icons. Adding a `device-in
       </service>
     </service-group>
     ```
-    leave the folders before the last   </service-group> alone
+    leave the folders before the last ```</service-group>``` alone
     
 4.  **Restart the Avahi daemon:**
     ```bash
